@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Static9Star/User-Managmet-App.git/static/css/main.abf6ad34.css",
+    "main.js": "/Static9Star/User-Managmet-App.git/static/js/main.76ce1767.js",
+    "index.html": "/Static9Star/User-Managmet-App.git/index.html",
+    "main.abf6ad34.css.map": "/Static9Star/User-Managmet-App.git/static/css/main.abf6ad34.css.map",
+    "main.76ce1767.js.map": "/Static9Star/User-Managmet-App.git/static/js/main.76ce1767.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abf6ad34.css",
+    "static/js/main.76ce1767.js"
+  ]
+}
