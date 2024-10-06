@@ -10,7 +10,7 @@ const Fetch = () => {
   const [users, setUsers] = useState([]);
   const [editingUser, setEditingUser] = useState(null);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', username: '', website: '' });
-  const [newEmployeeData, setNewEmployeeData] = useState({
+  const [newUserData, setNewUserData] = useState({
     name: '',
     email: '',
     phone: '',
@@ -66,28 +66,28 @@ const Fetch = () => {
     }
   };
 
-  const handleNewEmployeeInputChange = (e) => {
+  const handleNewUserInputChange = (e) => {
     const { name, value } = e.target;
-    setNewEmployeeData({ ...newEmployeeData, [name]: value });
+    setNewUserData({ ...newUserData, [name]: value });
   };
 
-  const handleCreateEmployee = (e) => {
+  const handleCreateUser = (e) => {
     e.preventDefault(); // Prevent the default form submission
-    const newEmployee = {
-      ...newEmployeeData,
+    const newUser = {
+      ...newUserData,
       address: {
-        street: newEmployeeData.street,
-        city: newEmployeeData.city
+        street: newUserData.street,
+        city: newUserData.city
       },
       company: {
-        name: newEmployeeData.companyName
+        name: newUserData.companyName
       }
     };
 
-    axios.post(json_url, newEmployee)
+    axios.post(json_url, newUser)
       .then(response => {
         setUsers([...users, response.data]);
-        setNewEmployeeData({
+        setNewUserData({
           name: '',
           email: '',
           phone: '',
@@ -97,17 +97,17 @@ const Fetch = () => {
           companyName: '',
           website: ''
         });
-        alert('New employee created successfully');
+        alert('New User created successfully');
       })
-      .catch(error => console.error('Error creating employee:', error));
+      .catch(error => console.error('Error creating User:', error));
   };
 
   return (
     <>
       <UserModal
-        newEmployeeData={newEmployeeData}
-        handleNewEmployeeInputChange={handleNewEmployeeInputChange}
-        handleCreateEmployee={handleCreateEmployee}
+        newUserData={newUserData}
+        handleNewUserInputChange={handleNewUserInputChange}
+        handleCreateUser={handleCreateUser}
       />
       <UserEditModal
         editingUser={editingUser}
