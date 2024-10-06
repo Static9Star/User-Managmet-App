@@ -5,10 +5,10 @@ const Welcome = () => {
     const users=useNavigate();
     
   return (
-    <div className="center-div text-end">
+    <div className="center-div text-center" style={{width:'90%'}}>
         <p className='text-light text-center display-1'>Welcome</p>
         <p className='text-light text-center fs-1'>User Managment System</p>
-        <button className='btn btn-outline-light text-end' onClick={()=>users('/users')}>View Users List  <i class="bi bi-arrow-right"></i></button>
+        <button className='btn btn-outline-light' onClick={()=>users('/users')}>View Users List  <i class="bi bi-arrow-right"></i></button>
             <br />
         <small className='text-secondary'>~ Dhruv</small>
     </div>
