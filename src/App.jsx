@@ -1,26 +1,21 @@
 import React from 'react';
-import Fetch from './component/Fetch';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom';
-import Welcome from './Welcome';
+import { Routes, Route } from 'react-router-dom';
 import UserDetails from './UserDetails';
-import NotFound from './NotFound';
+import Fetch from './component/Fetch';
+import Welcome from './Welcome'
+
 
 const App = () => {
-
   return (
-    <>
-        <Router basename={process.env.PUBLIC_URL}>
-          <Routes>
+    <div>
+      <Routes>
             <Route path='/' element={<Welcome />} />
             <Route path='users' element={<Fetch />} />
             <Route path="/user/:id" element={<UserDetails />} />
-            <Route path='*' element={<NotFound />} />
-          </Routes>
-        </Router>
-        
-        
-    </>
+      </Routes>
+    </div>
   );
 };
 
 export default App;
+
